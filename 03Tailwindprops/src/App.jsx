@@ -20,7 +20,7 @@ function App() {
      </h1>
 
      <Card username='sipun' someobj = {obj} arr = {arr} btnTxt = "Visit Me"/>
-     <Card  />
+  
 
 
     </>
