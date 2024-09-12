@@ -15,14 +15,17 @@ function App() {
 
   return (
     <>
+    <div className='w-screen flex justify-center'>
+      <div>
      <h1 className='bg-green-500 text-black p-4 rounded-xl mb-5'>
       Tailwind Test
      </h1>
 
      <Card username='sipun' someobj = {obj} arr = {arr} btnTxt = "Visit Me"/>
-  
+     <Card username='kiran' someobj = {obj} arr = {arr} />
+     </div>
 
-
+     </div>
     </>
   )
 }
