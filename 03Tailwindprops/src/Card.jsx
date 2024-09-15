@@ -1,10 +1,12 @@
-function Card({ btnTxt = "Click Me", arr, someobj, username}) {
+function Card({ btnTxt = "Click Me", arr, someobj, username, src}) {
   console.log(someobj);
   
+const imgUrl = src || "https://images.pexels.com/photos/5380670/pexels-photo-5380670.jpeg?auto=compress&cs=tinysrgb&w=600"
+
   return (
     <div className="relative h-[400px] w-[300px] rounded-md">
       <img
-        src="https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHVzZXJ8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+src= {imgUrl} 
         alt="AirMax Pro"
         className="z-0 h-full w-full rounded-md object-cover"
       />
