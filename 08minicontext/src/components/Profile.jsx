@@ -7,7 +7,7 @@ const {user} = useContext(UserContext)
 
 if (!user) return <div> Please login</div>
 
-return <div> Welcome to {user.username}</div>
+return <div> Welcome to {user.username} </div>
 
    
 }
