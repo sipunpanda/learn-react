@@ -4,9 +4,7 @@ import usePokemonList from "../../hooks/usePokemonList";
 import { useEffect } from 'react';
 function PokemonList() {
     const [ pokemonListState, setPokemonListState] = usePokemonList(false);
-    useEffect(() => {
-        console.log("render")
-    })
+    
     return (
         <div className="pokemon-list-wrapper">
             <div className="pokemon-wrapper">

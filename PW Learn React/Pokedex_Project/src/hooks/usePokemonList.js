@@ -14,6 +14,8 @@ function usePokemonList() {
 
             setPokemonListState((state) => ({ ...state, isLoading: true}));
             const response = await axios.get(pokemonListState.pokedexUrl); // this downloads list of 20 pokemons
+         
+            
 
             const pokemonResults = response.data.results;  // we get the array of pokemons from result
 
@@ -28,13 +30,14 @@ function usePokemonList() {
             const pokemonData = await axios.all(pokemonResultPromise); // array of 20 pokemon detailed data
 
             // now iterate on the data of each pokemon, and extract id, name, image, types
+console.log(pokemonData);
 
             const pokeListResult = pokemonData.map((pokeData) => {
                 const pokemon = pokeData.data;
                 return {
                     id: pokemon.id,
                     name: pokemon.name, 
-                    image: (pokemon.sprites.other) ? pokemon.sprites.other.dream_world.front_default : pokemon.sprites.front_shiny, 
+                    image: (pokemon.sprites.other) ? (pokemon.sprites.other.dream_world.front_default ? pokemon.sprites.other.dream_world.front_default : (pokemon.sprites.other["official-artwork"].front_default)) : pokemon.sprites.front_shiny , 
                     types: pokemon.types
                 }
             });
@@ -44,6 +47,7 @@ function usePokemonList() {
                 isLoading: false
             }));
     }
+    
 
     useEffect(() => {
         downloadPokemons();

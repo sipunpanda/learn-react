@@ -23,3 +23,7 @@
     background-color: beige;
 }
 
+.Pokemon:hover .name{
+    color: rgb(56, 111, 109);
+}
+

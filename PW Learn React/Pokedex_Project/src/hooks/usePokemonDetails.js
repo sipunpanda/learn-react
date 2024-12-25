@@ -14,7 +14,7 @@ function usePokemonDetails(id, pokemonName) {
             const pokemonOfSameTypes = await axios.get(`https://pokeapi.co/api/v2/type/${response.data.types ? response.data.types[0].type.name : ''}`);
             setPokemon({
                 name: response.data.name,
-                image: response.data.sprites.other.dream_world.front_default,
+                image: (response.data.sprites.other) ? (response.data.sprites.other.dream_world.front_default ? response.data.sprites.other.dream_world.front_default : (response.data.sprites.other["official-artwork"].front_default)) : response.data.sprites.front_shiny,
                 weight: response.data.weight,
                 height: response.data.height,
                 types: response.data.types.map((t) => t.type.name),
