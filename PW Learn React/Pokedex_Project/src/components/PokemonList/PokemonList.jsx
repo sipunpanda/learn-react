@@ -6,8 +6,8 @@ function PokemonList() {
     const [ pokemonListState, setPokemonListState] = usePokemonList(false);
     
     return (
-        <div className="pokemon-list-wrapper">
-            <div className="pokemon-wrapper">
+        <div className="pokemon-list-wrapper w-screen">
+            <div className="pokemon-wrapper grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 w-full px-4">
                 {(pokemonListState.isLoading) ? 'Loading....' : 
                     pokemonListState.pokemonList.map((p) => <Pokemon name={p.name} image={p.image} key={p.id} id={p.id} />)
                 }

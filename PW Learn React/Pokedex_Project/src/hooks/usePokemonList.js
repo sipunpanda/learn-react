@@ -30,7 +30,7 @@ function usePokemonList() {
             const pokemonData = await axios.all(pokemonResultPromise); // array of 20 pokemon detailed data
 
             // now iterate on the data of each pokemon, and extract id, name, image, types
-console.log(pokemonData);
+// console.log(pokemonData);
 
             const pokeListResult = pokemonData.map((pokeData) => {
                 const pokemon = pokeData.data;
