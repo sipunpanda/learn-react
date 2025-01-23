@@ -10,7 +10,7 @@ function Pokemon({ name, image, id }) {
         // </div>
 <div className="grid">
 
-        <div class="Pokemon mb-2.5 flex flex-col items-center justify-center max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-slate-400  dark:bg-gray-800 dark:border-gray-700">
+        <div class="Pokemon min-h-fit mb-2.5 flex flex-col items-center justify-center max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-slate-400  dark:bg-gray-800 dark:border-gray-700">
           
                 <img className="rounded-t-lg" src={image} alt="unavailable" />
             <div class="p-5">

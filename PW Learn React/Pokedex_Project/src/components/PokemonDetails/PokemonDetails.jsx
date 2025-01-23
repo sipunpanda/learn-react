@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom";
 import './PokemonDetails.css';
 import usePokemonDetails from "../../hooks/usePokemonDetails";
+
 function PokemonDetails({ pokemonName }) {
     const { id } = useParams();
     const [pokemon] = usePokemonDetails(id, pokemonName);
+
+
     return (
         <div className="pokemon-details-wrapper w-screen">
             <img className="pokemon-details-image" src={pokemon.image} />
@@ -23,15 +26,20 @@ function PokemonDetails({ pokemonName }) {
                     </h1>
 
                     <div>
-{/* {console.log({pokemon},"meeeeeeeeeeee")} */}
-                        <div className=" w-screen grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-1 p-2">
-                            {pokemon.similarPokemons.map((p) => <div className=" bg-slate-300 hover:bg-slate-500 m-2 rounded-md flex text-center justify-center" key={p.pokemon.url}>{p.pokemon.name}</div>)}
+    <div className="w-screen grid grid-cols-12 p-2">
+        {pokemon.similarPokemons.map((p) => (
+            <div
+                className="bg-slate-300 hover:bg-slate-500 m-2 rounded-md flex text-center justify-center"
+                key={p.pokemon.url}
+                // value={p.pokemon.name}
+                // onClick={(e)=> setSearchTerm(e.target.value)}
+            >
+                {p.pokemon.name}
+            </div>
+        ))}
+    </div>
+</div>
 
-
-                            {/* {pokemon.similarPokemons.map((p) => <Link to={`/pokemon/${id}`} > <div className=" bg-slate-300 hover:bg-slate-500 m-2 rounded-md flex text-center justify-center" key={p.pokemon.url}>{p.pokemon.name}</div> </Link>)} */}
-
-                        </div>
-                    </div>
 
 
 
