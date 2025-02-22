@@ -17,16 +17,18 @@ const {setUser} = useContext(UserContext)
         setUser({username, password})
     }
     return(
-        <div>
+        <div >
             <h2>Login</h2>
-            <input type="text"
+            <input type="text" style={{marginBottom:'10px'}}
             value={username}
             onChange={(e)=> setUsername(e.target.value)}
             placeholder='username' />
-            <input type="password"
+            <br></br>
+            <input type="password" style={{marginBottom:'10px'}}
             value={password}
             onChange={(e)=> setPasssword(e.target.value)}
             placeholder='passsword' />
+            <br></br>
             <button onClick={handlesubmit}>Submit</button>
         </div>
     )
